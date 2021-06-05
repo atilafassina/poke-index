@@ -1,12 +1,14 @@
 import type { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from 'styles/Home.module.css'
+import Link from 'next/link'
+import fetchPkmList from 'utils/fetch-pkm-list'
 
-const API = 'https://pokeapi.co/api/v2/'
-const LIMIT = 100
-
-const Home = ({ pokemons, count, limit }: InferGetStaticPropsType<typeof getStaticProps>) => {
-
+const Home = ({
+  pokemons,
+  count,
+  limit,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,12 +19,14 @@ const Home = ({ pokemons, count, limit }: InferGetStaticPropsType<typeof getStat
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          showing {limit}  of {count} pokemons
+          showing {limit} of {count} pokemons
         </h1>
         <ul>
-          {pokemons.map((char) => (
-            <li key={char.url}>
-              {char.name}
+          {pokemons.map(({ name, url }) => (
+            <li key={url}>
+              <Link href={`/${name}`}>
+                <a>{name}</a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -32,22 +36,15 @@ const Home = ({ pokemons, count, limit }: InferGetStaticPropsType<typeof getStat
 }
 
 export async function getStaticProps() {
-  const resp = await fetch(`${API}pokemon?limit=${LIMIT}`)
-  const {count, results}: {
-    count: number
-    results: {
-      name: string
-      url: string
-    }[]
-  } = await resp.json()
+  const { limit, count, pokemons } = await fetchPkmList()
+
   return {
     props: {
-      limit: LIMIT,
+      limit,
       count,
-      pokemons: results
-    }
+      pokemons,
+    },
   }
 }
-
 
 export default Home

@@ -4,8 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start"
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "singleQuote": true
   },
   "dependencies": {
     "next": "10.2.3",
@@ -13,7 +18,9 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@netlify/functions": "^0.7.2",
     "@types/react": "^17.0.9",
+    "prettier": "^2.3.0",
     "typescript": "^4.3.2"
   }
 }
