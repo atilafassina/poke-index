@@ -4,6 +4,11 @@
 // }
 
 const { builder } = require('@netlify/functions')
+const ReactDOMServer = require('react-dom/server')
+
+function Title({ name }) {
+  return <h1>{name} from React</h1>
+}
 
 async function pokemonPages(event, context) {
   return {
@@ -11,16 +16,7 @@ async function pokemonPages(event, context) {
     headers: {
       'Content-Type': 'text/html',
     },
-    body: `
-          <!DOCTYPE html>
-              <html>
-                  <body>
-                    Hello World
-                  </body>
-                  <script>${event}</script>
-                  <script>${context}</script>
-          </html>
-          `,
+    body: ReactDOMServer.renderToString(Title('Testing')),
   }
 }
 
