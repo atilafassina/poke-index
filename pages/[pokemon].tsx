@@ -28,11 +28,11 @@ export default function PokemonPage({
 }
 
 export async function getStaticPaths() {
-  const { pokemons } = await fetchPkmList()
+  // const { pokemons } = await fetchPkmList()
 
   return {
-    paths: pokemons.map(({ name }) => ({ params: { pokemon: name } })),
-    fallback: false,
+    paths: [],
+    fallback: 'blocking',
   }
 }
 
