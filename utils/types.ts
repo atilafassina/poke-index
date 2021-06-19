@@ -1,6 +1,4 @@
-import { API } from './settings'
-
-type PokemonProps = {
+export type PokemonProps = {
   abilities: any[]
   base_experience: number
   forms: any[]
@@ -21,11 +19,4 @@ type PokemonProps = {
   stats: {}[]
   types: {}[]
   weight: number
-}
-
-export default async (character: string) => {
-  const resp = await fetch(`${API}pokemon/${character}`)
-  const pkmProps: PokemonProps = await resp.json()
-
-  return pkmProps
 }

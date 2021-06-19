@@ -1,6 +1,8 @@
+import type { PokemonProps } from './types'
+
 import { API, LIMIT } from './settings'
 
-export default async () => {
+export const fetchPkmList = async () => {
   const resp = await fetch(`${API}pokemon?limit=${LIMIT}`)
 
   const {
@@ -19,4 +21,11 @@ export default async () => {
     pokemons: results,
     limit: LIMIT,
   }
+}
+
+export const fetchPkmProps = async (character: string) => {
+  const resp = await fetch(`${API}pokemon/${character}`)
+  const pkmProps: PokemonProps = await resp.json()
+
+  return pkmProps
 }

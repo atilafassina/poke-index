@@ -2,7 +2,7 @@ import type { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import styles from 'styles/Home.module.css'
 import Link from 'next/link'
-import fetchPkmList from 'utils/fetch-pkm-list'
+import { fetchPkmList } from 'utils/fetch-pkm'
 
 const Home = ({
   pokemons,
