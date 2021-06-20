@@ -1,0 +1,97 @@
+.screen {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 80vw;
+  height: 32vh;
+  min-height: 350px;
+  width: 600px;
+  background-color: #999;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.display {
+  width: 70%;
+  height: calc(27vh - 5rem);
+  overflow: auto;
+  margin: 2rem auto 0;
+  background-color: #fff;
+  border: 3px solid #494949;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+}
+
+.screen::after {
+  content: '';
+  background-color: var(--page-background);
+  height: 5rem;
+  width: 10em;
+
+  position: absolute;
+  bottom: -2rem;
+  left: -5rem;
+  transform: rotate(45deg);
+  display: block;
+}
+
+.controls {
+  padding-top: 10px;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.speakers {
+  list-style: none;
+  width: 75px;
+  height: 25px;
+  margin-right: 20px;
+}
+
+.speakers li {
+  height: 3px;
+  width: 5rem;
+  margin-bottom: 5px;
+  background-color: #494949;
+  border-radius: 30px;
+}
+
+.bigButton {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 30px;
+  background-color: red;
+  background: linear-gradient(top, red 0%, firebrick 80%);
+}
+
+.ledList {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.ledList li {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 20px;
+  background: radial-gradient(var(--light), var(--dark));
+}
+
+.ledRed {
+  --light: #fb7b7b;
+  --dark: #fb0505;
+}
+.ledYellow {
+  --light: #fbfb9b;
+  --dark: #fbfb05;
+}
+.ledGreen {
+  --light: #b0fb7b;
+  --dark: #50fb05;
+}

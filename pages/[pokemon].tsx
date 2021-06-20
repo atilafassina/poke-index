@@ -1,29 +1,11 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
-import { fetchPkmProps } from 'utils/fetch-pkm'
+import { fetchPkmProps } from '@utils/fetch-pkm'
+import { PokemonCard } from '@layouts/pokemon-card'
 
-export default function PokemonPage({
-  name,
-  height,
-  sprites,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (
-    <main>
-      <h1>{name}</h1>
-      <ul>
-        {Object.keys(sprites)
-          .filter((key) => typeof sprites[key] === 'string')
-          // redundant check with nullish coalescion
-          // because TS is not narrowing the type
-          // as I expected
-          .map((key) => (
-            <li key={key}>
-              <img src={sprites[key] ?? ''} />
-            </li>
-          ))}
-      </ul>
-      <img src={sprites.front_default} />
-    </main>
-  )
+export default function PokemonPage(
+  pkmProps: InferGetStaticPropsType<typeof getStaticProps>
+) {
+  return <PokemonCard {...pkmProps} />
 }
 
 export async function getStaticPaths() {

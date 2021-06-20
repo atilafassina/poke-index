@@ -1,0 +1,21 @@
+.list {
+  width: 90%;
+}
+.item {
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  min-height: 2rem;
+  list-style: none;
+}
+
+.item::before {
+  position: relative;
+  top: 5px;
+  margin-right: 0.5rem;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url('/pokeball.png');
+  background-size: contain;
+}

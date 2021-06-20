@@ -1,0 +1,26 @@
+.wrapper {
+  padding: 1rem 0;
+  background: #000;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  border-top: solid 3px #adc4b6;
+}
+
+.what {
+  background-color: #454545;
+  color: #fff;
+  padding: 5rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.link {
+  font-family: monospace;
+  text-decoration: underline;
+  color: #29abe3;
+}
+
+.logo {
+  width: 7rem;
+}

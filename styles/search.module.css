@@ -1,0 +1,38 @@
+.wrapper {
+  padding: 5em 0;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid #fff;
+  background: radial-gradient(#05fbfb, #29abe3);
+  border-radius: 50%;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.input {
+  text-align: center;
+  font-size: 2rem;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  border-bottom: dotted 3px red;
+  border-radius: 10px 10px 0 0;
+}
+
+.input:focus {
+  border-bottom-style: solid;
+  background-color: rgba(0, 0, 0, 0.2);
+}
