@@ -1,5 +1,5 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
-import { fetchPkmProps } from '@utils/fetch-pkm'
+import { fetchPkmList, fetchPkmProps } from '@utils/fetch-pkm'
 import { PokemonCard } from '@layouts/pokemon-card'
 
 export default function PokemonPage(
@@ -9,9 +9,11 @@ export default function PokemonPage(
 }
 
 export async function getStaticPaths() {
+  const { pokemons } = await fetchPkmList()
+
   return {
-    paths: [],
-    fallback: 'blocking',
+    paths: pokemons.map(({ name }) => ({ params: { pokemon: name } })),
+    fallback: false,
   }
 }
 
