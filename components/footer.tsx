@@ -1,4 +1,5 @@
 import { AtilaIO } from '@components/atila-logo'
+import Image from 'next/image'
 import styles from '@styles/footer.module.css'
 export const Footer = () => {
   return (
@@ -19,13 +20,19 @@ export const Footer = () => {
           </a>
         </p>
         <strong>
-          <span role="image" aria-label="sparkles">
-            ✨
-          </span>
-          Article coming really soon
-          <span role="image" aria-label="sparkles">
-            ✨
-          </span>
+          <a
+            className={styles.postLink}
+            href="https://www.smashingmagazine.com/2021/06/breaking-down-bulky-builds-netlify-nextjs/"
+            rel="noopener"
+            target="_blank"
+          >
+            <Image
+              width="500px"
+              height="250px"
+              src="/smashing-og.jpg"
+              alt="Breaking Down Bulky Builds With Netlify And Next.js"
+            />
+          </a>
         </strong>
       </aside>
       <footer className={styles.wrapper}>

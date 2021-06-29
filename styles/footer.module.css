@@ -24,3 +24,13 @@
 .logo {
   width: 7rem;
 }
+
+.postLink {
+  padding-top: 2rem;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.postLink img {
+  border-radius: 10px;
+}

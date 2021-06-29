@@ -4,7 +4,15 @@ Netlify On-Demand Builders vs SSG on a NextJS app
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ccfe581b-1a55-41e9-9406-32f34a39f716/deploy-status)](https://app.netlify.com/sites/poke-index/deploys)
 
-This is a Proof-of-Concept.
+This is a Proof-of-Concept for my article [Breaking Down Bulky Builds With Netlify And Next.js](https://www.smashingmagazine.com/2021/06/breaking-down-bulky-builds-netlify-nextjs/)
+
+<div align="center">
+
+<a href="https://www.smashingmagazine.com/2021/06/breaking-down-bulky-builds-netlify-nextjs/">
+<img width="500" alt="Poster: Breaking Down Bulky Builds With Netlify And Next.js" src="https://raw.githubusercontent.com/atilafassina/poke-index/main/public/smashing-og.jpg" />
+</a>
+
+</div>
 
 ## Same app, 2 deploys 📖
 
