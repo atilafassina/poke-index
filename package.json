@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "yarn sitemap",
+    "sitemap": "tsm ./utils/sitemap.ts",
+    "js-sitemap": "NODE_OPTIONS='--experimental-json-modules' node ./utils/sitemap.mjs",
     "start": "next start"
   },
   "prettier": {
@@ -13,14 +16,18 @@
     "singleQuote": true
   },
   "dependencies": {
-    "next": "10.2.3",
+    "next": "12.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@netlify/functions": "^0.7.2",
+    "@types/prettier": "^2.4.2",
     "@types/react": "^17.0.9",
-    "prettier": "^2.3.0",
+    "globby": "^12.0.2",
+    "node-fetch": "^3.1.0",
+    "prettier": "^2.4.1",
+    "tsm": "^2.1.4",
     "typescript": "^4.3.2"
   }
 }

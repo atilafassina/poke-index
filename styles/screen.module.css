@@ -65,7 +65,7 @@
   width: 1.5rem;
   border-radius: 30px;
   background-color: red;
-  background: linear-gradient(top, red 0%, firebrick 80%);
+  background: linear-gradient(to bottom, red 0%, firebrick 80%);
 }
 
 .ledList {
