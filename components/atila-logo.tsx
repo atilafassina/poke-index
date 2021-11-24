@@ -5,8 +5,8 @@ export const AtilaIO = ({ className }: { className: string }) => (
     aria-label="Atila.io logo"
     className={className}
   >
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-      <g fill-rule="nonzero">
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <g fillRule="nonzero">
         <g transform="translate(0.000000, 280.000000)" fill="#fff">
           <path
             d="M176.7,26.7 L176.7,21.4 L180.2,21.4 L180.2,26.7 L176.7,26.7 Z M176.7,124 L176.7,33.8 L180.2,33.8 L180.2,124 L176.7,124 Z"
